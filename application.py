@@ -20,6 +20,15 @@ def hello_world():
                                   flask_debug=application.debug,
                                   app_version=app_version,
                                   enable_cool_new_feature=enable_cool_new_feature)
+
+@application.route('/tko')
+def hello_tko():
+    message = "Hello, world!"
+    return flask.render_template('tko.html',
+                                  title=message,
+                                  flask_debug=application.debug,
+                                  app_version=app_version,
+                                  enable_cool_new_feature=enable_cool_new_feature)
  
 if __name__ == '__main__':
     application.run(host='0.0.0.0')
